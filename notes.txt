@@ -1,0 +1,5 @@
+Course Overview
+
+Learning;
+  - HTML, CSS, JQuery and Bootstrap
+  - Django, Python and SQL for backend development
