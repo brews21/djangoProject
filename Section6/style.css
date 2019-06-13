@@ -1,0 +1,86 @@
+
+
+
+h1 {
+  color: red;
+  font-family: "Arial";
+  text-align: center;
+}
+
+li {
+  color: blue;
+}
+
+h4 {
+  color: rgba(255, 97, 0, 0.1)
+}
+
+
+body {
+  background-color: grey;
+  font-size: 20px;
+}
+
+div {
+  background-color: white;
+  border-color: blue;
+  border-width: 10px;
+  border-style: dotted;
+}
+
+p {
+  color: black;
+  font-family: monospace;
+  font-style: italic;
+  font-weight: bold;
+}
+
+span {
+  color: #FF00FF;
+  background-color: #00FFFF;
+}
+
+.firstDiv {
+  color: green;
+}
+
+.secondDiv {
+  background-color: grey;
+}
+
+#para {
+  color: blue;
+  text-decoration: line-through;
+}
+
+h3 + ol {
+  border: 4px dotted purple;
+}
+
+#ptwo {
+  font-family: fantasy;
+  font-size: 2.0em;
+}
+
+.mytable {
+  margin: auto;
+}
+
+td {
+  background-color: white;
+  padding: 5px;
+  width: 100px;
+  height: 200px;
+}
+
+#cell1 {
+  background-color: red;
+}
+
+#cell2 {
+  background-color: blue;
+}
+
+#cell3 {
+  background-color: green;
+}
