@@ -1,0 +1,13 @@
+to start a new django project
+make sure you are inside a python virtualenv
+
+- pip install django
+
+django cmds
+create a project
+-- django-admin startproject <project_name>
+create an app
+-- cd <project_name>
+-- python manage.py startapp <app_name>
+run the server
+-- python manage.py runserver
