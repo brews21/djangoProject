@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>First App -- Level 2</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>First_App -- Part 2 -- Users</h1>
+
+      <h2>Here are your user records</h2>
+      <div class="django">
+        {% if users_records %}
+        <ol>
+          {% for user in users_records %}
+          <li>User Info</li>
+            <ul>
+              <li>First Name: {{ user.first_name }}</li>
+              <li>Last Name: {{ user.last_name }}</li>
+              <li>Email: {{ user.email }}</li>
+            </ul>
+            {% endfor %}
+        </ol>
+
+        {% else %}
+        <p>No User Records found</p>
+        {% endif %}
+      </div>
+    </div>
+
+  </body>
+</html>
