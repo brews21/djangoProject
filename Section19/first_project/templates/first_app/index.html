@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends "first_app/base.html" %}
+  {% block body_block %}
+    <div class="container">
+      <h1>Section 19</h1>
+      <div class="container">
+        <div class="jumbotron">
+          <h2>Welcome to the Django Project</h2>
+        </div>
+        {{ text|cut:'world'|upper }}
+        {{ number|add:"99" }}
+
+
+      </div>
+
+    </div>
+  {% endblock %}
