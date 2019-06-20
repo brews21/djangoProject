@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends "first_app/base.html" %}
+  {% block body_block %}
+    <h1>Welcome to users.html</h1>
+    <h2>Template Inheritance</h2>
+    <div class="container">
+      <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="Submit">
+      </form>
+
+      <h2>Here are your user records</h2>
+      <div class="django">
+        {% if users_records %}
+        <ol>
+          {% for user in users_records %}
+          <li>User Info</li>
+            <ul>
+              <li>First Name: {{ user.first_name }}</li>
+              <li>Last Name: {{ user.last_name }}</li>
+              <li>Email: {{ user.email }}</li>
+            </ul>
+            {% endfor %}
+        </ol>
+
+        {% else %}
+        <p>No User Records found</p>
+        {% endif %}
+      </div>
+    </div>
+  {% endblock %}
