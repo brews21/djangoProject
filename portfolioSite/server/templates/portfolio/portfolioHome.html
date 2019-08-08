@@ -1,0 +1,15 @@
+{% extends "portfolio/portfolioBase.html" %}
+{% load staticfiles %}
+  {% block portfolio_block %}
+    <div class="jumbotron">
+      <h2>Welcome to My Portfolio</h2>
+    </div>
+    <div id="test">
+      <button class="mybtn btn-upsidedown" id="btn-myBtn" type="button" name="button" onclick="myFunction()">^</button>
+      <p class='btn-rtl' id='test'>hello</p>
+      <p class='btn-ltr' id='test2'>hello</p>
+      <p class='btn-ltr'>hello</p>
+    </div>
+
+    <script type="text/javascript" src="{% static 'js/test.js' %}"></script>
+  {% endblock %}

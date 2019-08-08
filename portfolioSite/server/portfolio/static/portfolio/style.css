@@ -1,0 +1,44 @@
+.myCSS {
+  background-color: red;
+}
+
+.mybtn{
+  font-size: 24px;
+}
+
+.btn-upsidedown {
+  color: red;
+}
+
+div#test {
+  color: red;
+}
+
+p#test.btn-rtl {
+  unicode-bidi:bidi-override;
+  direction:rtl;
+  color: purple;
+}
+
+p#test2.btn-rtl {
+  unicode-bidi:bidi-override;
+  direction:rtl;
+  color: orange;
+}
+p.btn-ltr {
+  unicode-bidi:bidi-override;
+  direction:ltr;
+}
+
+p#test2.btn-ltr {
+  unicode-bidi:bidi-override;
+  direction:ltr;
+  color: black;
+}
+
+.btn-upsidedown {
+  -webkit-transform:rotateY(180deg);
+  -moz-transform:rotateY(180deg);
+  -o-transform:rotateY(180deg);
+  -ms-transform:rotateY(180deg);
+}

@@ -11,3 +11,11 @@ def cut(value,arg):
 
 # this can be done either like this or with the @register.... style
 #register.filter('cut',cut)
+
+
+@register.filter(name='mikey')
+def mikey(value,arg):
+    """
+    This cuts out all values of "arg from the string"
+    """
+    return value.replace(arg,'')

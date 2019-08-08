@@ -29,3 +29,6 @@ this is to connect to ta sql db django creates for you
 -- python3 manage.py makemigrations <app_name>
 then run this again
 -- python3 manage.py migrate
+
+get info from set up db
+-- python3 manage.py inspectdb > <app_name>/models.py

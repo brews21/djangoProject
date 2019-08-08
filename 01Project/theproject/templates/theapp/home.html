@@ -1,0 +1,22 @@
+{% extends "theapp/base.html" %}
+{% load staticfiles %}
+{% load my_templates %}
+  {% block head_block %}
+    <link rel="stylesheet" href="{% static 'theapp/style.css' %}" type="text/css">
+  {% endblock %}
+  {% block body_block %}
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <div class="jumbotron">
+    <h2>Login</h2>
+    <form class="" action="{% url 'theapp:index' %}" method="post">
+      {% csrf_token %}
+      <label for="username">Username : </label>
+      <input type="text" name="username" placeholder="Enter Username">
+      <label for="password">Password : </label>
+      <input type="password" name="password">
+      <input type="submit" value="Login">
+    </form>
+  </div>
+
+      <script type="text/javascript" src="{% static 'js/home.js' %}"></script>
+  {% endblock %}

@@ -1,0 +1,54 @@
+{% extends "theapp/base.html" %}
+{% load staticfiles %}
+{% load my_templates %}
+  {% block head_block %}
+    <link rel="stylesheet" href="{% static 'theapp/style.css' %}" type="text/css">
+  {% endblock %}
+  {% block body_block %}
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+    <div class="jumbotron">
+      <h2>Welcome to the The Project</h2>
+    </div>
+    <a href="{% url 'theapp:index'%}">Refresh</a>
+    <div id="content">
+      {% csrf_token %}
+      {% if user_records %}
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <th>User ID</th>
+          <th>UserName</th>
+          <th>Password</th>
+          <th>Build Status</th>
+          <th>Infra Status</th>
+        </thead>
+        {% for acc in user_records %}
+        <tr>
+          <td>{{ acc.user_id }}</td>
+          <td>{{ acc.username }}</td>
+          <td>{{ acc.password }}</td>
+          <!-- <td>{{ acc.status }}</td> -->
+          {% if acc.build_status == 'FAILED' %}
+            <td><img id="hover_blink" class="failed" src="{% static 'images/redball.jpg' %}" alt="My image" style="height: 85px; width: 85px"></td>
+          {% elif acc.build_status == 'SUCCESS' %}
+            <td><img id="hover_blink" class="success" src="{% static 'images/greenball.jpg' %}" alt="My image" style="height: 85px; width: 85px"></td>
+          {% else %}
+            <td><img class="flashit" id="hover_blink" src="{% static 'images/redball.jpg' %}" alt="My image" style="height: 85px; width: 85px"></td>
+          {% endif %}
+          {% if acc.infra_status == 'FAILED' %}
+            <td><img id="hover_blink" src="{% static 'images/redball.jpg' %}" alt="My image" style="height: 85px; width: 85px"></td>
+          {% elif acc.infra_status == 'SUCCESS' %}
+            <td><img id="hover_blink" src="{% static 'images/greenball.jpg' %}" alt="My image" style="height: 85px; width: 85px"></td>
+          {% else %}
+            <td><img class="flashit" id="hover_blink" src="{% static 'images/redball.jpg' %}" alt="My image" style="height: 85px; width: 85px"></td>
+          {% endif %}
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <p>No Access Records found</p>
+      {% endif %}
+    </div>
+
+    <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+  {% endblock %}
