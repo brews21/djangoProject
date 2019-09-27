@@ -1,0 +1,22 @@
+{% extends "first_app/base.html" %}
+{% load my_templates %}
+  {% block body_block %}
+    <div class="jumbotron">
+      <h1>Welcome to registration.html</h1>
+      <h2>Template Inheritance</h2>
+
+      {% if registered %}
+        <h3>Thank You for Registering</h3>
+      {% else %}
+        <h3>Register Here</h3>
+        <h5>Fill out the form:</h5>
+
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ user_form.as_p }}
+          {{ profile_form.as_p }}
+          <input type="submit" value="Register">
+        </form>
+        {% endif %}
+    </div>
+  {% endblock %}

@@ -1,0 +1,44 @@
+from django import forms
+from django.core import validators
+from first_app.models import UserProfileInfo, MyUser
+from django.contrib.auth.models import User
+
+def check_for_z(value):
+    if value[0].lower() != 'z':
+        raise forms.ValidationError("Name Needs to start with Z")
+
+class FormName(forms.Form):
+    name = forms.CharField()
+    email = forms.EmailField()
+    verify_email = forms.EmailField(label='Enter your email again')
+    text = forms.CharField(widget=forms.Textarea)
+    days = forms.ChoiceField(choices=[(x, x) for x in range(1, 32)])
+    names = forms.ModelChoiceField(queryset=MyUser.objects.order_by('first_name'))
+    botcatcher = forms.CharField(required=False,
+                                widget=forms.HiddenInput,
+                                validators=[validators.MaxLengthValidator(0)])
+
+    def clean(self):
+        all_clean = super().clean()
+        email = all_clean['email']
+        vmail = all_clean['verify_email']
+        if email != vmail:
+            raise forms.ValidationError("Make sure emails match")
+
+
+class NewUserForm(forms.ModelForm):
+    class Meta():
+        model = MyUser
+        fields = ('first_name', 'last_name','email')
+
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+
+    class Meta():
+        model = User
+        fields = ('username','email','password')
+
+class UserProfileInfoForm(forms.ModelForm):
+    class Meta():
+        model = UserProfileInfo
+        fields = ('portfolio_site','profile_pic')
