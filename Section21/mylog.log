@@ -1,7 +1,0 @@
-WARNING:root:test test
-WARNING:root:test test
-WARNING:root:test test
-WARNING:root:test test
-INFO:django.utils.autoreload:Watching for file changes with StatReloader
-DEBUG:root:Test log
-INFO:django.utils.autoreload:/Users/michaelbrewster/Desktop/myGit/djangoProject/Section21/first_project/first_app/models.py changed, reloading.

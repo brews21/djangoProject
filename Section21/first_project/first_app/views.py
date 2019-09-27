@@ -1,14 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from first_app.models import Topic, Webpage, AccessRecord, MyUser, UserProfileInfo
-from first_app.forms import NewUserForm,UserForm,UserProfileInfoForm
-
+from first_app.forms import NewUserForm,UserForm,UserProfileInfoForm,FormName
 
 from django.contrib.auth import authenticate,login,logout
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-
-from . import forms
 
 from mylogger import logging
 
@@ -52,7 +49,7 @@ def users(request):
 
 def form_name_view(request):
     logging.debug(request)
-    form = forms.FormName()
+    form = FormName()
     if request.method == 'POST':
         form = forms.FormName(request.POST)
         if form.is_valid():
@@ -60,8 +57,6 @@ def form_name_view(request):
             print("Name : " +form.cleaned_data['name'])
             print("Email : " +form.cleaned_data['email'])
             print("Text : " +form.cleaned_data['text'])
-            print("Days : " +form.cleaned_data['days'])
-            print("Names : " +form.cleaned_data['names'])
     return render(request,'first_app/form_page.html',{'form':form})
 
 def registration(request):
