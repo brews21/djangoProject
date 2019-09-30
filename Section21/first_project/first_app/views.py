@@ -51,7 +51,7 @@ def form_name_view(request):
     logging.debug(request)
     form = FormName()
     if request.method == 'POST':
-        form = forms.FormName(request.POST)
+        form = FormName(request.POST)
         if form.is_valid():
             print("Validation")
             print("Name : " +form.cleaned_data['name'])

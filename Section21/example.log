@@ -337,3 +337,52 @@ INFO:django.utils.autoreload:Watching for file changes with StatReloader
 DEBUG:root:Test log
 DEBUG:root:<WSGIRequest: GET '/first_app/formpage/'>
 DEBUG:root:<WSGIRequest: GET '/first_app/formpage/'>
+WARNING:root:test test
+WARNING:root:test test
+WARNING:root:test test
+WARNING:root:test test
+WARNING:root:test test
+WARNING:root:test test
+WARNING:root:test test
+WARNING:root:test test
+INFO:django.utils.autoreload:Watching for file changes with StatReloader
+DEBUG:root:Test log
+DEBUG:root:<WSGIRequest: GET '/'>
+INFO:root:testing
+DEBUG:root:<WSGIRequest: GET '/first_app/formpage/'>
+DEBUG:root:<WSGIRequest: POST '/first_app/formpage/'>
+ERROR:django.request:Internal Server Error: /first_app/formpage/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/michaelbrewster/Desktop/myGit/djangoProject/Section21/first_project/first_app/views.py", line 54, in form_name_view
+    form = forms.FormName(request.POST)
+NameError: name 'forms' is not defined
+INFO:django.utils.autoreload:/Users/michaelbrewster/Desktop/myGit/djangoProject/Section21/first_project/first_app/views.py changed, reloading.
+WARNING:root:test test
+WARNING:root:test test
+WARNING:root:test test
+WARNING:root:test test
+INFO:django.utils.autoreload:Watching for file changes with StatReloader
+DEBUG:root:Test log
+DEBUG:root:<WSGIRequest: POST '/first_app/formpage/'>
+DEBUG:root:<WSGIRequest: POST '/first_app/formpage/'>
+DEBUG:root:<WSGIRequest: POST '/first_app/formpage/'>
+DEBUG:root:<WSGIRequest: GET '/first_app/registration/'>
+DEBUG:root:<WSGIRequest: POST '/first_app/registration/'>
+DEBUG:root:<WSGIRequest: GET '/first_app/relative_url_templates/'>
+DEBUG:root:<WSGIRequest: GET '/first_app/users/'>
+DEBUG:root:<WSGIRequest: GET '/first_app/index/'>
+INFO:root:testing
+DEBUG:root:<WSGIRequest: GET '/first_app/login/'>
+DEBUG:root:<WSGIRequest: POST '/first_app/login/'>
+DEBUG:root:<WSGIRequest: GET '/first_app/login/'>
+DEBUG:root:<WSGIRequest: POST '/first_app/login/'>
+DEBUG:root:<WSGIRequest: GET '/first_app/login/'>
+DEBUG:root:<WSGIRequest: GET '/'>
+INFO:root:testing
+DEBUG:root:<WSGIRequest: GET '/first_app/users/'>
