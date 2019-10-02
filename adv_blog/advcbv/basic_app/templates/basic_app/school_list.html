@@ -3,7 +3,7 @@
   <h1>Welcome to the list off all the Schools</h1>
   <ol>
     {% for school in school %}
-    <h2><li><a href="{{ school.id }}">{{ school.name }}</a></li></h2>
+    <h2><li><a href="{% url 'basic_app:detail' pk=school.pk %}">{{ school.name }}</a></li></h2>
     {% endfor %}
   </ol>
 {% endblock %}
